@@ -1,0 +1,19 @@
+name: bookmark-app
+version: 0.1.0
+
+authors:
+  - your-name-here <your-email-here>
+
+dependencies:
+  sqlite3:
+    github: crystal-lang/crystal-sqlite3
+  kemal:
+    github: kemalcr/kemal
+  
+targets:
+  bookmark-app:
+    main: src/bookmark-app.cr
+
+crystal: 0.26.0
+
+license: MIT

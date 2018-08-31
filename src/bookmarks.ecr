@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>BookmarksApp</h1>
+    <h3>Tengo <b><%= bookmarks.size %></b> bookmarks</h3>
+    <form action="/bookmarks" method="POST">
+        <input type="text" name="url" />
+        <button type="submit">add</button>
+    </form>
+
+    <ul>
+      <%- bookmarks.each do |b| -%>
+        <li>
+          <a href="<%= b.url %>" style="display:inline;" target="_blank"><%= b.url %></a>
+            -
+          <form action="/bookmarks/<%= b.id %>/destroy" style="display:inline;" method="POST">
+            <button type="submit">remove</button>
+          </form>
+
+        </li>
+      <%- end -%>
+    </ul>
+  </body>
+</html>
